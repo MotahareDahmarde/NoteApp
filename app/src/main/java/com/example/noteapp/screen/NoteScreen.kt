@@ -80,9 +80,10 @@ fun NoteScreen(
                 text = title,
                 label = "Title",
                 onTextChange = {
-                    if (it.all { char ->
-                            char.isLetter() || char.isWhitespace()
-                        }) title = it
+                    /*if (it.all { char ->
+                            char.isLetterOrDigit() || char.isWhitespace() })*/
+                    if (it.isNotBlank())
+                        title = it
                 })
 
             NoteInputText(modifier = Modifier.padding(
@@ -92,9 +93,10 @@ fun NoteScreen(
                 text = description,
                 label = "Description",
                 onTextChange = {
-                    if (it.all {char ->
-                            char.isLetter() || char.isWhitespace()
-                        }) description = it
+                    /*if (it.all {char ->
+                            char.isLetterOrDigit() || char.isWhitespace() }) */
+                    if (it.isNotBlank())
+                        description = it
                 })
 
             NoteButton(text = "Save",
@@ -104,9 +106,6 @@ fun NoteScreen(
                             description = description))
                         title = ""
                         description = ""
-                        Toast.makeText(context,
-                            "Note added",
-                            Toast.LENGTH_SHORT ).show()
                     }
                 })
         }

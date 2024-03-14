@@ -7,14 +7,11 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.noteapp.model.Note
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.noteapp.screen.NoteScreen
 import com.example.noteapp.screen.NoteViewModel
 import com.example.noteapp.ui.theme.NoteAppTheme
@@ -31,9 +28,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    //val noteViewModel = viewModel<NoteViewModel>() also work
-                    val noteViewModel : NoteViewModel by viewModels()
-                     NotesApp(noteViewModel)
+                    val noteViewModel = viewModel<NoteViewModel>() //also work
+                    //val noteViewModel : NoteViewModel by viewModels()
+                    NotesApp(noteViewModel)
                 }
             }
         }

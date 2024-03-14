@@ -84,6 +84,9 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
+
+    //view-model
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
 }
 kapt{
     correctErrorTypes = true
